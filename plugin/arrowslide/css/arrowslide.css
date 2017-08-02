@@ -1,25 +1,3 @@
-/*全局样式*/
-*{
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-body{
-	font-family: "microsoft yahei";
-	color: #000;
-	font-size: 16px;
-}
-li{
-	list-style: none;
-}
-button{
-	border: none;
-	outline: none;
-	background-color: transparent;
-}
-img {
-	border: 0;
-}
 .ck-slide {
 	position: relative;
 	overflow: hidden;
@@ -33,65 +11,17 @@ img {
 .ck-slide .ck-slide-wrapper li {  /*这里必须添加line-height:0px;否则垂直滚动<li>之间会出现间隔*/
 	position: absolute;
 	display: none;
-	line-height: 0;   
+	line-height: 0;
 }
-.ck-slide .ck-slide-wrapper li img{
-	width: 100%;
-}
-.ck-slide .ck-prev, 
-.ck-slide .ck-next {
-	position: absolute;
-	top: 50%;
-	z-index: 2;
-	width: 35px;
-	height: 70px;
-	margin-top: -35px;
-	border-radius: 3px;
-	opacity: .15;
-	background: #f00;
-	text-indent: -9999px;
-	background-repeat: no-repeat;
-	transition: opacity .2s linear 0s;
-}
-.ck-slide .ck-prev {
-	left: 5px;
-	background: url(../img/arrow-left.png) #000 50% no-repeat;
-}
-.ck-slide .ck-next {
-	right: 5px;
-	background: url(../img/arrow-right.png) #000 50% no-repeat;
-}
+
 .ck-slidebox {
 	position: absolute;
-	left: 50%;
-	bottom: 12px;
+	bottom: 15px;
 	z-index: 30;
-	height: 20px;
-	padding: 0 4px;
-	border-radius: 8px;
-	background: rgba(0,0,0,0.5);
+	right: 50px
 }
-.ck-slidebox li {
-	float: left;
-	width: 12px;
-	height: 12px;
-	margin: 4px 4px;
-	border-radius: 100%;
-	background-color: #fff;
-	text-indent: -9999px;
-	cursor: pointer;
-}
-.ck-slidebox li.current{
-	background-color: #fe6500;
-}
-.ck-slidebox li:hover {
-	background-color: #fe6500;
-}
-
-/*注释*/
-.zhushi{width:900px;margin: 30px auto; }
-.zhushi p{ line-height:24px; font-family:"微软雅黑";font-size:16px;text-align:left;}
 
 /*轮播图大小自定义*/
-.ck-slide { width: 1024px; height: 370px; margin: 0 auto;}
-.ck-slide .ck-slide-wrapper li{width: 1024px;height: 370px;}
+.slide-index { width: 1554px; height: 775px; margin: 0 auto;}
+.slide-index .ck-slide-wrapper li{width: 1554px; height: 775px;text-align: center;}
+.slide-index .ck-slide-wrapper li img{width: 1554px; height: 100%;border: 1px;}

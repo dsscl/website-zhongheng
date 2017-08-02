@@ -3,23 +3,87 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/scss" href="sass/sass-index.scss">
+	<link rel="stylesheet" href="css/sass-index.min.css">
+	<link rel="stylesheet" href="plugin/arrowslide/css/arrowslide.css">
 </head>	
-<body class="body">
-	<header>
-		<img src="img/logo/logo-site_03.png">
-		<!-- <img src="img/pic/pic-sitetitle_03.png"> -->
-		<nav>
-			<a href="#"><img src="img/pic/pic-menu1_03.png"></a>
-			<a href="#"><img src="img/pic/pic-menu2_03.png"></a>
-			<a href="#"><img src="img/pic/pic-menu3_03.png"></a>
-			<a href="#"><img src="img/pic/pic-menu4_03.png"></a>
-			<a href="#"><img src="img/pic/pic-menu5_03.png"></a>
-			<a href="#"><img src="img/pic/pic-menu6_03.png"></a>
-			<a href="#"><img src="img/pic/pic-menu7_03.png"></a>
+<body class="body" style="height: 2000px">
+	<header class="margintop30">
+		<div class="flex-align-spacebetween">
+			<div class="flex-align">
+				<img src="img/logo/logo-site_03.png" width="173" height="138">
+				<img class="marginleft10" width="650" height="48"><!-- src="img/pic/pic-sitetitle_03.png"  -->
+			</div>
+			<img src="img/pic/pic-hotline_03.png" width="665" height="93">
+		</div>
+		<nav class="margintop40">
+			<a href="#"><img class="marginX7" src="img/pic/pic-menu1_03.png" width="204"></a>
+			<a href="#"><img class="marginX7" src="img/pic/pic-menu2_03.png" width="204"></a>
+			<a href="#"><img class="marginX7" src="img/pic/pic-menu3_03.png" width="204"></a>
+			<a href="#"><img class="marginX7" src="img/pic/pic-menu4_03.png" width="204"></a>
+			<a href="#"><img class="marginX7" src="img/pic/pic-menu5_03.png" width="204"></a>
+			<a href="#"><img class="marginX7" src="img/pic/pic-menu6_03.png" width="204"></a>
+			<a href="#"><img class="marginX7" src="img/pic/pic-menu7_03.png" width="204"></a>
 		</nav>
 	</header>
+	<main>
+		<!-- 首页轮播图   -->
+		<section class="margintop30 width100 clear">
+			<div class="ck-slide slide-index">
+				<ul class="ck-slide-wrapper">
+					<li><img src="" /></li>
+					<li><img src="" /></li>
+					<li><img src="" /></li>
+					<li><img src="" /></li>
+				</ul>
+				<ul class="ck-slidebox">
+					<li class="icon-slide1 current"></li>
+					<li class="icon-slide2"></li>
+					<li class="icon-slide3"></li>
+					<li class="icon-slide4"></li>
+				</ul>
+			</div>
+		</section>
+		<section class="margintop50 textAlignCenter">
+			<img src="img/pic/pic-index2.png" width="810" height="110">
+			<img class="margintop40" src="img/pic/pic-index3.png" width="1345" height="198">
+		</section>
+		<section class="margintop50">
+			<div class="textAlignCenter">
+				<img src="img/pic/pic-index4.png" width="810" height="110">
+			</div>
+			<div class="margintop10 flex-spacebetween">
+				<img src="img/pic/pic-index5.png" width="759" height="396">
+				<img src="img/pic/pic-index6.png" width="746" height="396">
+			</div>	
+			<div class="margintop40 flex-spacebetween">	
+				<img src="img/pic/pic-index7.png" width="517" height="305">
+				<img src="img/pic/pic-index8.png" width="519" height="305">
+				<img src="img/pic/pic-index9.png" width="481" height="305">
+			</div>
+		</section>
+		<section class="margintop50">
+			<img class="margintop40" src="img/pic/pi">
+		</section>
+	</main>
 
 	<script src="js/jquery.2.1.4.min.js"></script>
+	<script src="plugin/arrowslide/js/slide.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			/* 首页 轮播图 */
+			$(".slide-index").ckSlide({
+				autoPlay: true,//默认为不自动播放，需要时请以此设置
+				dir: "x",//默认效果淡隐淡出，x为水平移动，y 为垂直滚动
+				interval: 3000,//默认间隔2000毫秒
+			});
+			/* 轮播图图片居中不变形 */
+			$(".slide-index .ck-slide-wrapper li img").each(function(){
+				var wthspare = $(this).width() - $(".slide-index .ck-slide-wrapper li").width();
+				if(wthspare>0){
+					$(this).css("margin-left",-wthspare*0.5);
+				}
+			});
+		})
+	</script>
 </body>
 </html>
