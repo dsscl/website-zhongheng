@@ -1,3 +1,4 @@
-node_modules/
-rev/
+node_modules
+rev
+package.json
 

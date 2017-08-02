@@ -23,24 +23,20 @@ gulp.task('sass',function(){
     }))
     .pipe(rename({suffix:'.min'}))
     /*.pipe(minifycss())*/
-    .pipe(rev())
+    /*.pipe(rev())*/
     .pipe(gulp.dest('css'))
     .pipe(notify({message: 'sass task complete'}))
-    /*生成一个rev-manifest.json*/
-    .pipe(rev.manifest())        
+    /*.pipe(rev.manifest())        
     .pipe(gulp.dest('rev'))
-    .pipe(notify({message: 'rev task complete'}));
+    .pipe(notify({message: 'rev task complete'}));*/
 });
 
-gulp.task('rev', function() {
-	//- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
-    gulp.src(['rev/*.json', '/*.html'])   
-    //- 执行文件内css名的替换
-    .pipe(revcollector())                                   
-    //- 替换后的文件输出的目录
+/*gulp.task('rev', function() {
+    gulp.src(['rev/*.json', '/*.html']) 
+    .pipe(revcollector())         
     .pipe(gulp.dest('/*.html'))
     .pipe(notify({message: 'rev1 task complete'}));                
-});
+});*/
 
 gulp.task('watch',function(){
 	gulp.watch(['sass/*.scss'],['sass']);
@@ -49,7 +45,7 @@ gulp.task('watch',function(){
 });
 
 gulp.task('default',function(){
-	gulp.start('sass','rev','watch');
+	gulp.start('sass','watch');
 });
 
 /*gulp.task('script',function(){
