@@ -45,7 +45,7 @@
                     index = cindex;
                 });
             });
-			//自己添加——鼠标移入小圆点切换轮播图片
+			//悬浮切换相应序号的图片
 			$(this).find('.ck-slidebox li').each(function(cindex){
                 $(this).on('mouseover.slidebox', function(){
                     change.call(that, cindex, index);
@@ -90,7 +90,7 @@
             // dir  移动方向参数
             switch(opts.dir){
                 case "x":
-                    opts['width'] = $(this).width();
+                    opts['width'] = $(this).find(".ck-slide-wrapper li").width();
                     slidewrap.css({
                         'width':count * opts['width']
                     });

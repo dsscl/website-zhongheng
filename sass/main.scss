@@ -1,40 +1,71 @@
 /* 公共 */
-.marginX7{
-	margin: 0 7px;
+.marginX3{
+	margin-left: 3px;
+	margin-right: 3px;
 }
-.body{
-	margin: 0 auto;
-	width: 1554px;
+.width1024{
+	width: 1024px;
 }
-
-/* 头部 */
-.g-header{
-}
-
-/* 底部 */
-.g-footer{
-}
-
 /* 首页 */
+.childmenuWrap{
+	position: absolute;
+	z-index: 5;
+	width: 125px;
+	height: 185px;
+	background: linear-gradient(to bottom, #ebeaea, #e4e3e3, #c0bfbf);
+	text-align: center;
+}
+.childmenu-6{
+	right: 160px;
+}
+.childmenu-7{
+	right: 15px;
+}
 .ck-slidebox{
 	@for $i from 1 through 4 {
 	    .icon-slide#{$i} {
 	    	margin: 0 3px;
-			float: left;
-			cursor: pointer;
-	    	width: 45px;
-	    	height: 45px;
-	    	background: url(../img/icon/icon-slide#{$i}.png) no-repeat center/100% 100%;
+				float: left;
+				cursor: pointer;
+	    	width: 30px;
+	    	height: 30px;
+	    	background: url(../img/static/icon-slide#{$i}.png) no-repeat center/100% 100%;
 	    }
 	}
 	@for $i from 1 through 4 {
 	    .icon-slide#{$i}.current {
-	    	margin: 0 3px;
-			float: left;
-			cursor: pointer;
-	    	width: 45px;
-	    	height: 45px;
-	    	background: url(../img/icon/icon-slide#{$i}-cur.png) no-repeat center/100% 100%;
+	    	background: url(../img/static/icon-slide#{$i}-cur.png) no-repeat center/100% 100%;
 	    }
 	}
+}
+.coopWrap{
+	padding: 0 70px;
+	background-color: #d6dce5;
+}
+.contactWrap{
+	width: 420px;
+	height: 300px;
+	padding: 30px 60px;
+	background-color: #5b9bd5;
+	color: #fff;
+	position: relative;
+	.whiteCorner{
+		position: absolute;
+		width: 92px;
+		height: 46px;
+		background-color: #fff;
+		transform: rotate(45deg);
+	}
+	.leftCorner{
+		left: -30px;
+		bottom: -7px;
+	}
+	.rightCorner{
+		right: -30px;
+		top: -7px;
+	}
+}
+.mapWrap{
+	width: 500px;
+	height: 300px;
 }
