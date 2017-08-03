@@ -2,12 +2,6 @@
 	position: relative;
 	overflow: hidden;
 }
-.ck-slide .ck-slide-wrapper {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
 .ck-slide .ck-slide-wrapper li {  /*这里必须添加line-height:0px;否则垂直滚动<li>之间会出现间隔*/
 	position: absolute;
 	display: none;
@@ -21,7 +15,15 @@
 	right: 50px
 }
 
-/*轮播图大小自定义*/
-.slide-index { width: 1554px; height: 775px; margin: 0 auto;}
-.slide-index .ck-slide-wrapper li{width: 1554px; height: 775px;text-align: center;}
-.slide-index .ck-slide-wrapper li img{width: 1554px; height: 100%;border: 1px;}
+/*首页轮播图大小自定义*/
+.slide-index {margin: 0 auto; width: 1024px; height: 512px; }
+.slide-index .ck-slide-wrapper li{width: 1024px; height: 512px;text-align: center;}
+.slide-index .ck-slide-wrapper li img{width: 1024px; height: 100%;}
+
+/*合作伙伴轮播图大小自定义*/
+.slide-cooperator {margin: 0 auto; width: 900px; height: 150px;}
+.slide-cooperator .ck-slide-wrapper{margin-top: 35px;}
+.slide-cooperator .ck-slide-wrapper li{width: 225px; height: 83px;text-align: center;}
+.slide-cooperator .ck-slide-wrapper li img{width: 215px; height: 83px;}
+.slide-cooperator .ck-prev{position: absolute; top: 50%; margin-top:-23px; left: 0;}
+.slide-cooperator .ck-next{position: absolute; top: 50%; margin-top:-23px; right: 0;}
