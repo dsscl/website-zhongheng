@@ -1,8 +1,4 @@
 /* 公共 */
-.marginX3{
-	margin-left: 3px;
-	margin-right: 3px;
-}
 .width1024{
 	width: 1024px;
 }
@@ -23,10 +19,12 @@
 	text-align: center;
 }
 .indexNav .childmenu-6{
-	right: 160px;
+	top: 50px;
+	right: 154px;
 }
 .indexNav .childmenu-7{
-	right: 15px;
+	top: 50px;
+	right: 6px;
 }
 .ck-slidebox{
 	@for $i from 1 through 4 {
