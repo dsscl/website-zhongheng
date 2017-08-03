@@ -22,7 +22,7 @@ gulp.task('sass',function(){
         remove:true
     }))
     .pipe(rename({suffix:'.min'}))
-    /*.pipe(minifycss())*/
+    .pipe(minifycss())
     /*.pipe(rev())*/
     .pipe(gulp.dest('css'))
     .pipe(notify({message: 'sass task complete'}))
@@ -31,28 +31,29 @@ gulp.task('sass',function(){
     .pipe(notify({message: 'rev task complete'}));*/
 });
 
+gulp.task('js',function(){
+    return gulp.src('plugin/arrowslide/js/slide.js')
+    /*.pipe(concat('all.js'))*/
+    .pipe(rename({suffix:'.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('plugin/arrowslide/js'))
+    .pipe(notify({message:'js task complete'}));
+});
+
+gulp.task('watch',function(){
+	gulp.watch(['sass/*.scss','plugin/arrowslide/js/slide.js'],['sass','js']);
+	livereload.listen();
+	gulp.watch(['css/*','plugin/arrowslide/js/*']).on('change',livereload.changed);
+});
+
+gulp.task('default',function(){
+	gulp.start('sass','js','watch');
+});
+
+
 /*gulp.task('rev', function() {
     gulp.src(['rev/*.json', '/*.html']) 
     .pipe(revcollector())         
     .pipe(gulp.dest('/*.html'))
     .pipe(notify({message: 'rev1 task complete'}));                
-});*/
-
-gulp.task('watch',function(){
-	gulp.watch(['sass/*.scss'],['sass']);
-	livereload.listen();
-	gulp.watch(['css/*']).on('change',livereload.changed);
-});
-
-gulp.task('default',function(){
-	gulp.start('sass','watch');
-});
-
-/*gulp.task('script',function(){
-	return gulp.src('')
-	.pipe(concat('all.js'))
-	.pipe(rename({suffix:'.min'}))
-	.pipe(uglify())
-	.pipe(gulp.dest('js'))
-	.pipe(notify({message:'js task complete'}));
 });*/
