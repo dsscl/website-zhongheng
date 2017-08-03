@@ -146,6 +146,6 @@
 		autoPlay: false,//默认不自动播放
         dir: null,//默认淡隐淡出效果
         isAnimate: false,//默认按钮可用
-		interval:2000//默认自动2秒切换 
-		 };
+		interval:2000//默认自动2秒切换
+	};
 })(jQuery);
