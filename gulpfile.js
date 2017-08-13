@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),
     revcollector = require('gulp-rev-collector'),
     notify = require('gulp-notify'),
+    imagemin = require('gulp-imagemin'),
     livereload = require('gulp-livereload');
 
 gulp.task('sass',function(){
@@ -40,6 +41,18 @@ gulp.task('js',function(){
     .pipe(notify({message:'js task complete'}));
 });
 
+gulp.task('img-images',function(){
+    return gulp.src('img/images/*.*')
+    .pipe(imagemin({progressive: true}))
+    .pipe(gulp.dest('img/images'));
+});
+
+gulp.task('img-static',function(){
+    return gulp.src('img/static/*.*')
+    .pipe(imagemin({progressive: true}))
+    .pipe(gulp.dest('img/static'));
+});
+
 gulp.task('watch',function(){
 	gulp.watch(['sass/*.scss','plugin/arrowslide/js/slide.js'],['sass','js']);
 	livereload.listen();
@@ -47,7 +60,7 @@ gulp.task('watch',function(){
 });
 
 gulp.task('default',function(){
-	gulp.start('sass','js','watch');
+	gulp.start('sass','js','img-images','img-static','watch');
 });
 
 

@@ -16,8 +16,8 @@
 }
 
 /*首页轮播图大小自定义*/
-.slide-index {margin: 0 auto; width: 1024px; height: 512px; }
-.slide-index .ck-slide-wrapper li{width: 1024px; height: 512px;text-align: center;}
+.slide-index {margin: 0 auto; width: 1024px; height: 330px; }
+.slide-index .ck-slide-wrapper li{width: 1024px; height: 330px;text-align: center;}
 .slide-index .ck-slide-wrapper li img{width: 1024px; height: 100%;}
 
 /*合作伙伴轮播图大小自定义*/
